@@ -4,7 +4,7 @@
 
 ## Usage
 
-`select_item(var, index)` - numpy-style indexing for torch
+`select_item(var, index)` - Is similar to `[var[row,col] for row, col in enumerate(index)]`.
 
     import torch
     import torch_extras
