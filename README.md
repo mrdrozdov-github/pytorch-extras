@@ -4,6 +4,20 @@
 
 ## Usage
 
+### [expand_along](#expand_along)
+
+`expand_along(var, mask)` - Useful for selecting a dynamic amount of items from different indexes using a byte mask.
+
+    import torch
+    import torch_extras
+    setattr(torch, 'expand_along', torch_extras.expand_along)
+
+    var = torch.Tensor([1, 0, 2])
+    mask = torch.ByteTensor([[True, True], [False, True], [False, False]])
+    torch.expand_along(var, mask)
+    # (1, 1, 0)
+
+
 ### [expand_dims](#expand_dims)
 
 `expand_dims(var, dim)` - Is similar to [numpy.expand_dims](https://docs.scipy.org/doc/numpy/reference/generated/numpy.expand_dims.html).
