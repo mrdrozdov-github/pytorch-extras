@@ -22,4 +22,6 @@ def select_item(var, index):
     mask = torch.range(0, var.size(1) - 1).long()
     mask = mask.repeat(var.size(0), 1)
     mask = mask.eq(index_mask)
-    return var[mask]
+    if isinstance(var, Variable):
+        mask = Variable(mask, volatile=var.volatile)
+    return torch.masked_select(var, mask)
