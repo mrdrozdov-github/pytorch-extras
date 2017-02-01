@@ -1,3 +1,3 @@
-from .extras import select_item
+from .extras import expand_dims, select_item
 
-__all__ = ['select_item']
+__all__ = ['expand_dims', 'select_item']

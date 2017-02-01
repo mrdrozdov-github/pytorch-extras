@@ -5,10 +5,23 @@ from torch.autograd import Variable
 
 import torch_extras
 
+setattr(torch, 'expand_dims', torch_extras.expand_dims)
 setattr(torch, 'select_item', torch_extras.select_item)
 
 
 class PytorchExtrasTestCase(unittest.TestCase):
+
+    def test_expand_dims_variable(self):
+        var = Variable(torch.range(0, 9).view(-1, 2))
+        ret = torch.expand_dims(var, 0)
+        expected = var.view(1, -1, 2)
+        assert ret.size() == expected.size()
+
+    def test_expand_dims_tensor(self):
+        var = torch.range(0, 9).view(-1, 2)
+        ret = torch.expand_dims(var, 0)
+        expected = var.view(1, -1, 2)
+        assert ret.size() == expected.size()
 
     def test_select_item_variable(self):
         var = Variable(torch.range(0, 9).view(-1, 2))
