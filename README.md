@@ -29,6 +29,8 @@
     var = torch.range(0, 9).view(-1, 2)
     torch.expand_dims(var, 0).size()
     # (1, 5, 2)
+    
+Note: Have recently found out about [torch.unsqeeze](http://pytorch.org/docs/tensors.html?highlight=unsqueeze#torch.Tensor.unsqueeze), which has the same API and is probably a more effective method for expanding dimensions.
 
 
 ### [select_item](#select_item)
