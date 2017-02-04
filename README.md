@@ -6,7 +6,7 @@
 
 ### [expand_along](#expand_along)
 
-`expand_along(var, mask)` - Useful for selecting a dynamic amount of items from different indexes using a byte mask.
+`expand_along(var, mask)` - Useful for selecting a dynamic amount of items from different indexes using a byte mask. This is a bit like [numpy.repeat](https://docs.scipy.org/doc/numpy/reference/generated/numpy.repeat.html).
 
     import torch
     import torch_extras
