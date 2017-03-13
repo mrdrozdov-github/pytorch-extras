@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pytorch-extras',
-      version='0.1.2',
+      version='0.1.3',
       description='A handful of extensions to the pytorch library.',
       url='http://github.com/mrdrozdov/pytorch-extras',
       author='Andrew Drozdov',
